@@ -17,21 +17,18 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
-@RequiredArgsConstructor
+//@Service
+//@RequiredArgsConstructor
 @Slf4j
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsServiceImpl { // implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    /*private final UserRepository userRepository;
 
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
         log.info("Vao loadUserByUsername IN." + userEmail);
-        //var myUser = userRepository.findByEmail(userEmail)
-        //        .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        //return new User(myUser.getEmail(), myUser.getPassword(), mapRoleToAuthority(myUser.getRoles()));
         return userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-    }
+    }*/
 }

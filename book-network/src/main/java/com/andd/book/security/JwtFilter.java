@@ -18,9 +18,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-@Component
 @RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
@@ -32,7 +31,7 @@ public class JwtFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
-        log.info("Vao doFilterInternal IN.");
+        //log.info("Vao doFilterInternal IN.");
         if (request.getServletPath().contains("/api/v1/auth")) {
             filterChain.doFilter(request, response);
             return;
@@ -41,7 +40,7 @@ public class JwtFilter extends OncePerRequestFilter {
         final String jwt;
         final String userEmail;
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            log.info("Vao doFilterInternal (2).");
+            //log.info("Vao doFilterInternal (2).");
             filterChain.doFilter(request, response);
             return;
         }
@@ -62,6 +61,6 @@ public class JwtFilter extends OncePerRequestFilter {
             }
         }
         filterChain.doFilter(request, response);
-        log.info("Vao doFilterInternal OUT.");
+        //log.info("Vao doFilterInternal OUT.");
     }
 }

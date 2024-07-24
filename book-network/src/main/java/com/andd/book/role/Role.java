@@ -14,9 +14,9 @@ import java.util.List;
 @Setter
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@EntityListeners(AuditingEntityListener.class)
+// @NoArgsConstructor
+// @Entity
+// @EntityListeners(AuditingEntityListener.class)
 public class Role {
 
     @Id

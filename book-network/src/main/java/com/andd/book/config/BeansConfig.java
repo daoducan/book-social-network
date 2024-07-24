@@ -26,7 +26,7 @@ import static org.springframework.http.HttpHeaders.*;
 @Slf4j
 public class BeansConfig {
 
-    private final UserDetailsService userDetailsService;
+    /*private final UserDetailsService userDetailsService;
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -37,7 +37,7 @@ public class BeansConfig {
         return authProvider;
     }
 
-    @Bean
+    /*@Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         log.info("Vao authenticationManager() IN.");
         return configuration.getAuthenticationManager();
@@ -47,10 +47,10 @@ public class BeansConfig {
     public PasswordEncoder passwordEncoder() {
         log.info("Vao passwordEncoder() IN.");
         return new BCryptPasswordEncoder();
-    }
+    }*/
 
     @Bean
-    public AuditorAware<Integer> auditorAware() {
+    public AuditorAware<String> auditorAware() {
         return new ApplicationAuditAware();
     }
 
