@@ -5,7 +5,6 @@ import com.andd.book.exception.OperationNotPermittedException;
 import com.andd.book.file.FileStorageService;
 import com.andd.book.history.BookTransactionHistory;
 import com.andd.book.history.BookTransactionHistoryRepository;
-import com.andd.book.user.User;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

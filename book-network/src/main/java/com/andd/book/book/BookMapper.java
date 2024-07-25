@@ -7,10 +7,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookMapper {
     public Book toBook(BookRequest request) {
+        if (request == null) {
+            throw new NullPointerException("The book request should not be null");
+        }
         return Book.builder()
                 .id(request.id())
                 .title(request.title())
                 .authorName(request.authorName())
+                .isbn(request.isbn())
                 .synopsis(request.synopsis())
                 .archived(false)
                 .shareable(request.shareable())
@@ -18,6 +22,9 @@ public class BookMapper {
     }
 
     public BookResponse toBookResponse(Book book) {
+        if (book == null) {
+            throw new NullPointerException("The book not found. The book should not be null");
+        }
         return BookResponse.builder()
                 .id(book.getId())
                 .title(book.getTitle())
@@ -33,6 +40,9 @@ public class BookMapper {
     }
 
     public BorrowedBookResponse toBorrowedBookResponse(BookTransactionHistory history) {
+        if (history == null) {
+            throw new NullPointerException("The book history not found");
+        }
         return BorrowedBookResponse.builder()
                 .id(history.getBook().getId())
                 .title(history.getBook().getTitle())
